@@ -120,6 +120,8 @@
 
 <script>
 import casteaching from "@acacha/casteaching";
+
+const api = casteaching({baseUrl: 'https://casteaching.jhonmoreno.codes/api'})
 import {
   IonAvatar,
   IonContent,
@@ -156,7 +158,7 @@ export default {
     },
     async fetchVideos(){
       this.loading = true
-      this.videos = await casteaching.videos()
+      this.videos = await api.videos()
       this.loading = false
     }
   },

@@ -35,6 +35,8 @@
 
 <script>
 import casteaching from '@acacha/casteaching'
+
+const api = casteaching({baseUrl: 'https://casteaching.jhonmoreno.codes/api'})
 import {
   IonButtons,
   IonCardHeader,
@@ -71,7 +73,7 @@ export default {
     }
   },
   async created() {
-    this.video= await casteaching.video.show(this.$route.params.id);
+    this.video= await api.video.show(this.$route.params.id);
 
     // this.video={
     //   id: 1,
