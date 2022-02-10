@@ -75,6 +75,13 @@ export default {
   async created() {
     this.video= await api.video.show(this.$route.params.id);
 
+    try {
+      this.video = await this.casteaching.video.show(this.$route.params.id)
+    } catch (error) {
+      console.log(error);
+      // TODO es fer un toast de Ionic per mostrar un error
+      // https://ionicframework.com/docs/api/toast
+    }
     // this.video={
     //   id: 1,
     //   title: "Ubuntu 101",
